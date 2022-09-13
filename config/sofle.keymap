@@ -5,9 +5,88 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h> 
 #include <dt-bindings/zmk/bt.h>
+* #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 
+#define SEARCH    LS(F12)
+#define JOURNAL   F21
+
+//Ctrl + Arrows
+#define CUP     LS(LC(T))
+#define CLEFT   LS(LC(TAB))
+#define CDOWN   LC(W)
+#define CRIGHT  LC(TAB)
+
+&mmv {
+    time-to-max-speed-ms = <300>;
+};
+
+/ {    
+    behaviors { 
+        cup: cup {
+            compatible = "zmk,behavior-mod-morph";
+            label = "cup";
+            #binding-cells = <0>;
+            bindings = <&kp UP>, <&kp CUP>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        cdown: cdown {
+            compatible = "zmk,behavior-mod-morph";
+            label = "cdown";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp CDOWN>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        cleft: cleft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "cleft";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp CLEFT>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        cright: cright {
+            compatible = "zmk,behavior-mod-morph";
+            label = "cright";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp CRIGHT>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        
+        ctrljournal: ctrljournal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ctrljournal";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp JOURNAL>;
+            mods = <(MOD_RSFT)>;
+        };
+        backquestion: backquestion {
+            compatible = "zmk,behavior-mod-morph";
+            label = "backquestion";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };  
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <160>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };       
+        mk: mk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mk";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+         };
+    };
 / {
     keymap {
         compatible = "zmk,keymap";
