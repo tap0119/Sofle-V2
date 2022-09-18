@@ -96,15 +96,15 @@
         default_layer {
             bindings = <
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
-    &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4      &kp N5                               &kp N6     &kp N7      &kp N8     &kp N9     &kp N0     &kp FSLH
+    &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4      &kp N5                               &kp N6     &kp N7      &kp N8     &kp N9     &kp N0     &kp DEL
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp TAB    &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y                                &kp F      &kp G       &kp C      &kp R      &kp L      &kp BSLH
+    &kp TAB    &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y                                &kp F      &kp G       &kp C      &kp R      &kp L      &kp FSLH
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp SEMI   &kp A      &kp O      &kp E     &hm RSHIFT U &kp I                                &kp D      &kp H       &kp T      &kp N      &kp S      &cup 
+    &kp LCTRL  &kp A      &kp O     &kp E     &hm RSHIFT U  &kp I                                &kp D    &hm RSHIFT H  &kp T      &kp N      &kp S      &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp LCTRL  &kp LSHIFT &kp Q      &kp J      &kp K       &kp X      &kp C_MUTE     &none      &kp B      &kp M       &kp W      &kp V      &kp Z      &cdown 
+    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K       &kp X      &kp C_MUTE      &kp PSCRN  &kp B      &kp M       &kp W      &kp V      &kp Z      &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI   &kp LALT  &kp MINUS    &kp SPACE  &mo NAV2       &kp ENTER &mk NAV BSPC &mo MOUSE   &cleft     &cright
+                          &kp LGUI  &kp LALT   &kp MINUS   &kp SPACE  &mo NAV2       &kp ENTER  &mk NAV BSPC &mo MOUSE &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
