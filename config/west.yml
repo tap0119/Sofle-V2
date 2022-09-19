@@ -2,7 +2,7 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: krikun98
+    - name: tap0119
       url-base: https://github.com/tap0119
   projects:
     - name: zmk
