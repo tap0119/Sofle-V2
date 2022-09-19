@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h> 
 #include <dt-bindings/zmk/bt.h>
-// #include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
@@ -11,6 +11,14 @@
 
 #define SEARCH    LS(F12)
 #define JOURNAL   F21
+
+//Mouse Movement
+#define MUP       MOVE(0,     -800)
+#define MLEFT     MOVE(-800, 0)
+#define MDOWN     MOVE(0,     800) 
+#define MRIGHT    MOVE(800,  0) 
+#define MSUP      SCROLL_UP
+#define MSDOWN    SCROLL_DOWN
 
 //Ctrl + Arrows
 #define CUP     LS(LC(T))
@@ -100,11 +108,11 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp TAB    &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y                                &kp F      &kp G       &kp C      &kp R      &kp L      &kp FSLH
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp MINUS  &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &cup 
+    &kp BSPC   &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &kp MINUS
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &cdown 
+    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &kp EQUAL 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp LCTRL    &kp SPACE  &mo NAV2       &kp ENTER   &mk NAV BSPC &mo MOUSE &cleft     &cright
+                          &kp LGUI  &kp LCTRL  &kp SPACE   &mo NAV2    &kp LALT        &none     &kp ENTER  &mk NAV BSPC &mo MOUSE  &kp BSLH
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP           &inc_dec_kp PG_UP PG_DN>;
@@ -119,9 +127,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp MINUS  &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &cdown 
+    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE     &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp LCTRL    &kp SPACE  &mo NAV2       &kp ENTER   &mk NAV BSPC &mo MOUSE &cleft     &cright
+                          &kp LGUI  &kp LCTRL  &kp SPACE   &mo NAV2    &kp LALT       &mo MOUSE  &kp ENTER  &mk NAV BSPC  &cleft   &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
@@ -130,11 +138,17 @@
         
         MOUSE {
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4            &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
-&none     &kp L    &kp R    &kp C    &kp G   &kp F                                     &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
-&trans    &kp S    &kp N    &kp T    &kp H   &kp D                                     &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
-&trans    &kp V    &kp V    &kp W    &kp M   &kp B  &trans                      &trans &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
-                    &trans    &trans &trans  &to 0  &trans                      &trans &trans    &trans   &trans          &trans
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
+    &trans       &none      &none    &none       &none       &none                                 &none    &none      &none       &none       &none      &none
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+    &trans       &none      &none     &kp MUP   &kp MSUP     &none                                 &none     &kp PG_UP  &kp CUP     &none       &none      &none  
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+    &trans    &kp MLEFT   &kp MLEFT   &kp MDOWN &kp MRIGHT   &none                              &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+     &none      &none      &none      &none     &kp MSDOWN   &none      &none           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
+//╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
+                          &kp LGUI  &kp MCLICK   &kp LCLICK  &kp RCLICK   &none           &none      &none    &none      &none       &none
+//                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -147,11 +161,11 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &none      &none      &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION  &kp F12
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp MINUS  &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
+    &trans     &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &kp LSHIFT &none      &kp LBKT   &kp RBKT    &kp LPAR   &kp C_MUTE     &to 0      &kp RPAR    &kp N1     &kp N2     &kp N3    &kp EXCL    &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp JOURNAL &none     &kp EQUAL   &kp SPACE  &kp LSHIFT    &kp ENTER &mk NAV BSPC  &none      &cleft     &cright
+                          &kp JOURNAL &kp BSPC  &kp SPACE   &kp LSHIFT &none         &kp ENTER &mk NAV BSPC  &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
