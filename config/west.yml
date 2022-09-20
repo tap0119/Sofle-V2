@@ -1,12 +1,10 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: tap0119
+    - name: tap0119custom
       url-base: https://github.com/tap0119
   projects:
     - name: zmk
-      remote: tap0119
+      remote: tap0119custom
       revision: main
       import: app/west.yml
   self:
