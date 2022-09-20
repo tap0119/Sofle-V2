@@ -1,83 +1,49 @@
+on: [push, pull_request, workflow_dispatch]
+
 name: Build
 
-on:
-  push:
-    paths:
-      - ".github/workflows/build.yml"
-      - "app/**"
-  pull_request:
-    paths:
-      - ".github/workflows/build.yml"
-      - "app/**"
-
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    name: Fetch Build Keyboards
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install yaml2json
+        run: python3 -m pip install remarshal
+      - id: set-matrix
+        name: Fetch Build Matrix
+        run: |
+          matrix=$(yaml2json build.yaml | jq -c .)
+          yaml2json build.yaml
+          echo "::set-output name=matrix::${matrix}"
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.4
+      image: zmkfirmware/zmk-build-arm:2.5
+    needs: matrix
+    name: Build
     strategy:
-      matrix:
-        board:
-          - bluemicro840_v1
-          - nice_nano
-          - nrfmicro_13
-          - proton_c
-        shield:
-          - bfo9000_left
-          - bfo9000_right
-          - boardsource3x4
-          - corne_left
-          - corne_right
-          - cradio_left
-          - cradio_right
-          - crbn
-          - eek
-          - helix_left
-          - helix_right
-          - iris_left
-          - iris_right
-          - jian_left
-          - jian_right
-          - jorne_left
-          - jorne_right
-          - kyria_left
-          - kyria_right
-          - lily58_left
-          - lily58_right
-          - microdox_left
-          - microdox_right
-          - nibble
-          - qaz
-          - quefrency_left
-          - quefrency_right
-          - reviung41
-          - romac
-          - romac_plus
-          - settings_reset
-          - sofle_left
-          - sofle_right
-          - splitreus62_left
-          - splitreus62_right
-          - tg4x
-          - tidbit
-        cmake-args: [""]
-        include:
-          - board: bdn9_rev2
-          - board: dz60rgb_rev1
-          - board: nrf52840_m2
-            shield: m60
-          - board: planck_rev6
-          - board: proton_c
-            shield: clueboard_california
-          - board: nice_nano
-            shield: kyria_left
-            cmake-args: -DCONFIG_ZMK_DISPLAY=y
-            skip-archive: true
-          - board: nice_nano
-            shield: kyria_right
-            cmake-args: -DCONFIG_ZMK_DISPLAY=y
-            skip-archive: true
+      fail-fast: false
+      matrix: ${{fromJson(needs.matrix.outputs.matrix)}}
     steps:
+      - name: Prepare variables
+        id: variables
+        run: |
+          if [ -n "${{ matrix.shield }}" ]; then
+            EXTRA_CMAKE_ARGS="-DSHIELD=${{ matrix.shield }}"
+            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+            DISPLAY_NAME="${{ matrix.shield }} - ${{ matrix.board }}"
+          else
+            EXTRA_CMAKE_ARGS=
+            DISPLAY_NAME="${{ matrix.board }}"
+            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+          fi
+          echo ::set-output name=extra-cmake-args::${EXTRA_CMAKE_ARGS}
+          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
+          echo ::set-output name=display-name::${DISPLAY_NAME}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache west modules
@@ -90,42 +56,40 @@ jobs:
             tools/
             zephyr/
             bootloader/
-          key: 4-${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('app/west.yml') }}
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
           restore-keys: |
-            4-${{ runner.os }}-build-${{ env.cache-name }}-
-            4-${{ runner.os }}-build-
-            4-${{ runner.os }}-
-        timeout-minutes: 2
-        continue-on-error: true
-      - name: Initialize workspace (west init)
-        run: west init -l app
-      - name: Update modules (west update)
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: West Init
+        run: west init -l config
+      - name: West Update
         run: west update
-      - name: Export Zephyr CMake package (west zephyr-export)
+      - name: West Zephyr export
         run: west zephyr-export
-      - name: Prepare variables
-        id: variables
+      - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
-          SHIELD_ARG=
-          ARTIFACT_NAME="${{ matrix.board }}"
-
-          if [ -n "${{ matrix.shield }}" ]; then
-            SHIELD_ARG="-DSHIELD=${{ matrix.shield }}"
-            ARTIFACT_NAME="${ARTIFACT_NAME}-${{ matrix.shield }}"
+          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+      - name: ${{ steps.variables.outputs.display-name }} DTS File
+        if: ${{ always() }}
+        run: |
+          if [ -f "build/zephyr/${{ matrix.board }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp; fi
+          if [ -f "build/zephyr/zephyr.dts" ]; then cat -n build/zephyr/zephyr.dts; fi
+      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
+        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+      - name: Rename artifacts
+        run: |
+          mkdir build/artifacts
+          if [ -f build/zephyr/zmk.uf2 ]
+          then
+            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
+          elif [ -f build/zephyr/zmk.hex ]
+          then
+            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
           fi
-
-          ARTIFACT_NAME="${ARTIFACT_NAME}-zmk"
-
-          echo ::set-output name=shield-arg::${SHIELD_ARG}
-          echo ::set-output name=artifact-name::${ARTIFACT_NAME}
-      - name: Build (west build)
-        run: west build -s app -b ${{ matrix.board }} -- ${{ steps.variables.outputs.shield-arg }} ${{ matrix.cmake-args }}
-      - name: Archive artifacts
-        if: ${{ !matrix.skip-archive }}
+      - name: Archive (${{ steps.variables.outputs.display-name }})
         uses: actions/upload-artifact@v2
         with:
-          name: "${{ steps.variables.outputs.artifact-name }}"
-          path: |
-            build/zephyr/zmk.hex
-            build/zephyr/zmk.uf2
-        continue-on-error: true
+          name: firmware
+          path: build/artifacts
