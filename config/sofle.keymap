@@ -109,14 +109,14 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp TAB    &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y                                &kp F      &kp G       &kp C      &kp R      &kp L      &kp FSLH
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &mo NAV2   &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &kp MINUS
+    &mo NAV2   &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &cdown
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &kp EQUAL 
+    &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &cup 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &kp LALT  &mo MOUSE  &kp SPACE    &kp BSPC     &mk MOUSE ENTER &mk NAV BSPC &none  &kp C_VOL_DN &kp C_VOL_UP 
+                          &kp LGUI    &kp LALT  &none      &kp SPACE &hm LCTRL MINUS &mk MOUSE ENTER &mk NAV BSPC &none  &cleft   &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
-                             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_VOL_DN C_VOL_UP>;
+                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         NAV2 {
@@ -162,9 +162,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &none      &none      &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION  &kp F12
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp BSPC     &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
+    &kp BSPC   &kp LEFT    &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &kp LSHIFT &none      &kp LBKT   &kp RBKT    &kp LPAR   &trans          &to 0      &kp RPAR    &kp N1     &kp N2     &kp N3    &kp EXCL    &cdown 
+    &trans     &kp DEL     &none      &kp LBKT   &kp RBKT    &kp LPAR   &trans          &to 0      &kp RPAR    &kp N1     &kp N2     &kp N3    &kp EXCL    &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
                           &kp JOURNAL &none      &kp BSPC  &trans   &hm LSHIFT BSPC       &trans    &trans      &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
@@ -188,7 +188,7 @@
                            &trans     &trans     &trans     &trans      &trans        &trans      &trans     &trans     &trans     &trans     
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
  
         };
     };
