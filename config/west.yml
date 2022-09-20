@@ -1,5 +1,5 @@
 manifest:
-  remotes:
+  remotes:   
     - name: tap0119custom
       url-base: https://github.com/tap0119
   projects:
