@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: tap0119custom
-      revision: main
+      revision: mouse-pr
       import: app/west.yml
   self:
     path: config
