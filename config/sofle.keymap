@@ -113,7 +113,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &kp EQUAL 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &kp LALT  &mo MOUSE    &kp SPACE   &kp LCTRL  &mk MOUSE ENTER &mk NAV BSPC &none  &kp C_VOL_DN &kp C_VOL_UP 
+                          &kp LGUI    &kp LALT  &mo MOUSE   &kp LCTRL   &kp SPACE     &mk NAV BSPC &mk MOUSE ENTER &none  &kp C_VOL_DN &kp C_VOL_UP 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -146,9 +146,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans    &mmv MLEFT &mmv MLEFT  &mmv MDOWN &mmv MRIGHT  &none                                &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-     &none      &none      &none      &none     &mwh MSDOWN   &none      &trans           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
+     &none      &none      &none      &none     &mwh MSDOWN &mkp MCLK &trans             &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &none     &mkp MCLK    &mkp LCLK   &mkp RCLK       &none      &none     &none      &none       &none
+                          &kp LGUI    &none     &mkp MCLK   &mkp RCLK    &mkp LCLK     &none      &none     &none      &none       &none
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
@@ -162,11 +162,11 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &none      &none      &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION  &kp F12
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
+    &kp BSPC     &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0      &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &kp LSHIFT &none      &kp LBKT   &kp RBKT    &kp LPAR   &trans          &to 0      &kp RPAR    &kp N1     &kp N2     &kp N3    &kp EXCL    &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp JOURNAL &none      &kp BSPC  &kp SPACE   &kp LSHIFT    &kp ENTER &mk NAV BSPC  &none      &cleft     &cright
+                          &kp JOURNAL &none      &kp BSPC  &kp LSHIFT  &kp SPACE      &mk NAV BSPC &kp ENTER   &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
