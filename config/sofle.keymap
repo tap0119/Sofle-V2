@@ -141,13 +141,13 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
     &trans       &none      &none    &none       &none       &none                                 &none    &none      &none       &none       &none      &none
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans       &none      &none     &kp MUP   &kp MSUP     &none                                 &none     &kp PG_UP  &kp CUP     &none       &none      &none  
+    &trans       &none      &none     &mmv MUP   &mwh MSUP     &none                                 &none     &kp PG_UP  &kp CUP     &none       &none      &none  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans    &kp MLEFT   &kp MLEFT   &kp MDOWN &kp MRIGHT   &none                              &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
+    &trans    &mmv MLEFT &mmv MLEFT  &mmv MDOWN &mmv MRIGHT  &none                                &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-     &none      &none      &none      &none     &kp MSDOWN   &none      &none           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
+     &none      &none      &none      &none     &mwh MSDOWN   &none      &none           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp MCLK    &kp LCLK     &kp RCLK   &none           &none      &none     &none      &none       &none
+                          &kp LGUI  &mkp MCLK    &mkp LCLK     &mkp RCLK   &none           &none      &none     &none      &none       &none
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
