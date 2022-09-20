@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h> 
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+//#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
@@ -13,12 +13,6 @@
 #define JOURNAL   F21
 
 //Mouse Movement
-#define MUP       MOVE(0,     -800)
-#define MLEFT     MOVE(-800, 0)
-#define MDOWN     MOVE(0,     800) 
-#define MRIGHT    MOVE(800,  0) 
-#define MSUP      SCROLL_UP
-#define MSDOWN    SCROLL_DOWN
 
 //Ctrl + Arrows
 #define CUP     LS(LC(T))
@@ -141,13 +135,13 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
     &trans       &none      &none    &none       &none       &none                                 &none    &none      &none       &none       &none      &none
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans      &none     &none     &mmv MUP   &mwh MSUP     &none                                 &none     &kp PG_UP  &kp CUP     &none       &none      &none  
+    &trans      &none     &none     &none   &none     &none                                 &none     &kp PG_UP  &kp CUP     &none       &none      &none  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans    &mmv MLEFT &mmv MLEFT  &mmv MDOWN &mmv MRIGHT  &none                                &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
+    &trans    &none &none  &none &none  &none                                &kp RSHIFT   &kp CLEFT  &kp CDOWN   &kp CRIGHT  &kp CRIGHT &none     
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-     &none      &none      &none      &none     &mwh MSDOWN   &none      &none           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
+     &none      &none      &none      &none     &none   &none      &none           &to 0    &kp DEL     &kp PG_DN  &none       &none       &none      &none
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &none     &mkp MCLK    &mkp LCLK   &mkp RCLK       &none      &none     &none      &none       &none
+                          &kp LGUI    &none     &none    &none   &none       &none      &none     &none      &none       &none
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
