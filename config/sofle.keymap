@@ -108,11 +108,11 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp TAB    &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y                                &kp F      &kp G       &kp C      &kp R      &kp L      &kp FSLH
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp BSPC   &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &kp MINUS
+    &mo NAV2   &kp A      &kp O     &kp E      &hm RSHIFT U &kp I                                &kp D      &hm RSHIFT H  &kp T    &kp N      &kp S      &kp MINUS
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &kp EQUAL 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &kp LALT  &kp LCTRL  &kp SPACE   &mo NAV2       &kp ENTER  &mk NAV BSPC &mo MOUSE &kp C_VOL_DN &kp C_VOL_UP 
+                          &kp LGUI    &kp LALT  &kp DEL    &kp SPACE   &kp BSPC      &mk ENTER MOUSE &mk NAV BSPC &kp LCTRL  &kp C_VOL_DN &kp C_VOL_UP 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_VOL_DN C_VOL_UP>;
