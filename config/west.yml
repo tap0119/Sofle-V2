@@ -11,7 +11,7 @@ manifest:
     path: config
 
 #manifest: 
-#  remotes:  
+#  remotes:   
 #    - name: zmkfirmware
 #      url-base: https://github.com/zmkfirmware
 #  projects:
