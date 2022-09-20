@@ -112,10 +112,10 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &kp C_MUTE      &kp PSCRN  &kp B     &kp M       &kp W      &kp V      &kp Z      &kp EQUAL 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI    &kp LALT  &kp LCTRL  &kp SPACE   &mo NAV2       &kp ENTER  &mk NAV BSPC &mo MOUSE  &kp BSLH  &none 
+                          &kp LGUI    &kp LALT  &kp LCTRL  &kp SPACE   &mo NAV2       &kp ENTER  &mk NAV BSPC &mo MOUSE &kp C_VOL_DN &kp C_VOL_UP 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
-                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+                             sensor-bindings = <&inc_dec_kp cleft cright &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         NAV2 {
