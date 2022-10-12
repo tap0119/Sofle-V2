@@ -14,10 +14,10 @@
 #define JOURNAL   F21
 
 //Mouse Movement
-#define MUP       MOVE(0,     -800)
-#define MLEFT     MOVE(-800, 0)
-#define MDOWN     MOVE(0,     800) 
-#define MRIGHT    MOVE(800,  0) 
+#define MUP       MOVE(0    , -1200)
+#define MLEFT     MOVE(-1200,     0)
+#define MDOWN     MOVE(0    ,  1200) 
+#define MRIGHT    MOVE(1200 ,     0) 
 #define MSUP      SCROLL_UP
 #define MSDOWN    SCROLL_DOWN
 
@@ -124,7 +124,7 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                        &none      &none      &none    &none       &none      &none
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans       &none      &none    &none       &none       &none                                 &none      &none      &none    &none       &none      &kp ENTER  
+   &out OUT_TOG  &none      &none    &none       &none       &none                                 &none      &none      &none    &none       &none      &kp ENTER  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans       &none      &none    &none       &none       &none                                 &none      &none      &none    &none       &none      &kp CUP 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
