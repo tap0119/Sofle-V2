@@ -14,10 +14,10 @@
 #define JOURNAL   F21
 
 //Mouse Movement
-#define MUP       MOVE(0    , -1200)
-#define MLEFT     MOVE(-1200,     0)
-#define MDOWN     MOVE(0    ,  1200) 
-#define MRIGHT    MOVE(1200 ,     0) 
+#define MUP       MOVE(0,     -1200)
+#define MLEFT     MOVE(-1200, 0)
+#define MDOWN     MOVE(0,     1200) 
+#define MRIGHT    MOVE(1200 , 0) 
 #define MSUP      SCROLL_UP
 #define MSDOWN    SCROLL_DOWN
 
@@ -76,7 +76,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <160>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -160,13 +160,13 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
     &kp TILDE  &kp F1     &kp F2     &kp F3     &kp F4      &kp F5                               &kp F6      &kp F7     &kp F8     &kp F9    &kp F10      &kp F11
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp GRAVE   &kp BSLH  &kp FSLH    &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION &kp F12
+    &kp GRAVE   &kp BSLH  &kp FSLH   &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION &kp F12
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp BSPC   &kp LEFT   &kp LEFT  &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0       &cup 
+    &kp BSPC   &kp LEFT   &kp LEFT   &kp DOWN   &kp RIGHT   &kp ENTER                            &kp MINUS   &kp N4     &kp N5     &kp N6    &kp N0       &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &kp DEL     &none     &kp EQUAL  &kp BSLH    &kp LBKT    &trans        &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &cdown 
+    &trans     &kp DEL    &none      &kp EQUAL  &kp BSLH    &kp LBKT    &trans        &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp JOURNAL &none    &hm LSHIFT BSPC &trans &kp LSHIFT    &trans    &trans      &none      &cleft     &cright
+                          &none      &kp JOURNAL &kp LSHIFT &trans      &kp LSHIFT    &trans    &trans       &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
