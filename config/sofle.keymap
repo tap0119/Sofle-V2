@@ -113,7 +113,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &cdown
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm LCTRL MINUS   &mk MOUSE ENTER &mk NAV BSPC &mk MOUSE ENTER &cleft &cright 
+                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm LCTRL ENTER   &mk MOUSE MINUS &mk NAV BSPC &mk MOUSE ENTER &cleft &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -166,7 +166,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &kp DEL     &none     &kp EQUAL  &kp BSLH    &kp LBKT    &trans        &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp JOURNAL &none      &hm LSHIFT BSPC &trans   &hm LSHIFT BSPC  &trans    &trans      &none      &cleft     &cright
+                          &kp JOURNAL &none    &hm LSHIFT BSPC &trans &kp LSHIFT    &trans    &trans      &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
