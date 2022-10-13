@@ -171,11 +171,11 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp GRAVE   &kp BSLH  &kp FSLH   &kp UP     &kp K_APP   &kp ESC                              &kp DOLLAR  &kp N7     &kp N8     &kp N9    &kp QUESTION &kp F12
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp BSPC   &kp LEFT   &kp LEFT   &kp DOWN  &hm2 LSHIFT RIGHT &kp ENTER                      &kp MINUS   &hm LSHIFT N4     &kp N5     &kp N6    &kp N0       &cup 
+    &kp BSPC   &kp LEFT   &kp LEFT   &kp DOWN  &kp RIGHT &kp ENTER                      &kp MINUS   &hm LSHIFT N4     &kp N5     &kp N6    &kp N0       &cup 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp COLON     &kp LSHIFT    &none      &kp EQUAL  &kp BSLH    &kp LBKT    &trans        &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &cdown 
+    &kp COLON  &kp LSHIFT &none      &kp EQUAL  &kp BSLH   &kp LBKT    &trans        &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &cdown 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &none      &kp JOURNAL &none      &trans     &hm2 LCTRL DEL  &trans    &trans       &none      &cleft     &cright
+                          &none      &kp JOURNAL &none      &trans    &hm2 LSHIFT DEL  &trans    &trans       &none      &cleft     &cright
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
