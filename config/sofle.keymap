@@ -27,6 +27,40 @@
 #define CDOWN   LC(W)
 #define CRIGHT  LC(TAB)
 
+/ {
+    macros {
+        mright: mright {
+            label = "mright";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to ARROWS>, <&cright>
+                ;
+         mleft: mleft {
+            label = "mleft";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to ARROWS>, <&cleft>
+                ;
+         mdown: mdown {
+            label = "mdown";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to ARROWS>, <&cdown>
+                ;
+          mup: mup {
+            label = "mup";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to ARROWS>, <&cup>
+                ;
+        };
+    };
+};
+
 / {    
     behaviors { 
         cup: cup {
@@ -122,7 +156,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &cdown
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC  &mk MOUSE ENTER &cleft &cright 
+                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC  &mleft  &mdown &mright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -183,7 +217,7 @@
                     
           };
             
-                    ENC1 {
+                    ARROWS {
             bindings = <
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
     &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
@@ -192,9 +226,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &trans     &trans      &trans     &trans  
+    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &mup     &trans      &trans     &trans  
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                           &trans     &trans     &trans     &trans      &trans        &trans      &trans     &trans     &trans     &trans     
+                           &trans     &trans     &trans     &trans      &trans        &trans      &trans     &mleft     &mdown     &mright     
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
