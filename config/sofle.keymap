@@ -153,7 +153,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &kp EQUAL
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft &mcdown &cright 
+                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft &to ARROWS &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
