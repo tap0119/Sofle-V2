@@ -35,28 +35,28 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS>, <&cleft>;
+                = <&to ARROWS &cleft>;
          };
         mcright: mcright {
             label = "mcright";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-               =  <&to ARROWS>, <&cright>;
+               =  <&to ARROWS &cright>;
          };
          mcdown: mcdown {
             label = "mcdown";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS>, <&cdown>;
+                = <&to ARROWS &cdown>;
           };
           mcup: mcup {
             label = "mcup";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS>, <&cup>;
+                = <&to ARROWS &cup>;
            };
     };  
     behaviors { 
