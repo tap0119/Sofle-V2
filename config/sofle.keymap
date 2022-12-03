@@ -35,28 +35,28 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS &cleft>;
+                = <&to ARROWS &kp LEFT>;
          };
         mcright: mcright {
             label = "mcright";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-               =  <&to ARROWS &cright>;
+               =  <&to ARROWS &kp RIGHT;
          };
          mcdown: mcdown {
             label = "mcdown";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS &cdown>;
+                = <&to ARROWS &kp DOWN>;
           };
           mcup: mcup {
             label = "mcup";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS &cup>;
+                = <&to ARROWS &kp UP>;
            };
     };  
     behaviors { 
@@ -153,7 +153,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &kp EQUAL
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft  &to ARROWS &cright 
+                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft &mcdown &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
