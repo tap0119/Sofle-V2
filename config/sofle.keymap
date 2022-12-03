@@ -59,10 +59,7 @@
                 = <&to ARROWS>, <&cup>
                 ;
         };
-    };
-};
-
-/ {    
+    };  
     behaviors { 
         cup: cup {
             compatible = "zmk,behavior-mod-morph";
