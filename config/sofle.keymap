@@ -30,29 +30,29 @@
 
 / {
     macros {
-        mright: mright {
-            label = "mright";
+        mcright: mcright {
+            label = "mcright";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                =  <&to ARROWS>, <&cright>;
          };
-         mleft: mleft {
-            label = "mleft";
+         mcleft: mcleft {
+            label = "mcleft";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&to ARROWS>, <&cleft>;
          };
-         mdown: mdown {
-            label = "mdown";
+         mcdown: mcdown {
+            label = "mcdown";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&to ARROWS>, <&cdown>;
           };
-          mup: mup {
-            label = "mup";
+          mcup: mcup {
+            label = "mcup";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -153,7 +153,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &cdown
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC  &mleft  &mdown &mright 
+                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC  &mcleft  &mcdown &mcright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -223,9 +223,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &mup     &trans      &trans     &trans  
+    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &mcup     &trans      &trans     &trans  
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                           &trans     &trans     &trans     &trans      &trans        &trans      &trans     &mleft     &mdown     &mright     
+                           &trans     &trans     &trans     &trans      &trans        &trans      &trans     &mcleft     &mcdown     &mcright     
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
