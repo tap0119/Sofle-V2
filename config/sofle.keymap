@@ -9,6 +9,7 @@
 #define MOUSE   2
 #define NAV     3
 #define ENC1    4
+#define ARROWS  5
 
 #define SEARCH    LS(F12)
 #define JOURNAL   F21
@@ -34,8 +35,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-               =  <&to ARROWS>
-               ,  <&kp RIGHT>
+               =  <&to ARROWS>, <&kp cright>
                ;
          mleft: mleft {
             label = "mleft";
