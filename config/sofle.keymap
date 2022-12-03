@@ -30,19 +30,19 @@
 
 / {
     macros {
+        mcleft: mcleft {
+            label = "mcleft";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to ARROWS>, <&cleft>;
+         };
         mcright: mcright {
             label = "mcright";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                =  <&to ARROWS>, <&cright>;
-         };
-         mcleft: mcleft {
-            label = "mcleft";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&to ARROWS>, <&cleft>;
          };
          mcdown: mcdown {
             label = "mcdown";
