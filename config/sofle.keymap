@@ -34,8 +34,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to ARROWS>, <&kp RIGHT>
-                ;
+               =  <&to ARROWS>
+               ,  <&kp RIGHT>
+               ;
          mleft: mleft {
             label = "mleft";
             compatible = "zmk,behavior-macro";
@@ -231,7 +232,7 @@
                            &trans     &trans     &trans     &trans      &trans        &trans      &trans     &mleft     &mdown     &mright     
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
  
         };
     };
