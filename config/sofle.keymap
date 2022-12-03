@@ -42,7 +42,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-               =  <&to ARROWS &kp RIGHT;
+               =  <&to ARROWS &kp RIGHT>;
          };
          mcdown: mcdown {
             label = "mcdown";
