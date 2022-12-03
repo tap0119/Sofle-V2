@@ -35,7 +35,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-               =  <&to ARROWS>, <&kp cright>
+               =  <&to ARROWS>, <&cright>
                ;
          mleft: mleft {
             label = "mleft";
