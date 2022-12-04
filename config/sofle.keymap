@@ -7,9 +7,9 @@
 #define DEFAULT 0
 #define NAV2    1
 #define MOUSE   2
-#define NAV     3
-#define ENC1    4
-#define ARROWS  5
+#define ARROWS  3
+#define NAV     4
+#define ENC1    5
 
 #define SEARCH    LS(F12)
 #define JOURNAL   F21
@@ -58,6 +58,23 @@
             bindings
                 = <&to ARROWS &cup>;
            };
+           
+         mcspace: mcspace {
+            label = "mcspace";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to 0 &kp SPACE>;
+           };
+        mcbs: mcspace {
+            label = "mcbs";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to 0 &kp BACKSPAC>E>;
+           };
+           
+           
     };  
     behaviors { 
         cup: cup {
@@ -153,7 +170,7 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp SEMI   &kp LSHIFT &kp Q     &kp J      &kp K        &kp X      &to ENC1      &kp PSCRN    &kp B     &kp M       &kp W       &kp V      &kp Z     &kp EQUAL
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft  &to ARROWS &cright 
+                        &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft  &mcdown &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
                              sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -162,15 +179,15 @@
         NAV2 {
             bindings = <
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                        &none      &none      &none    &none       &none      &none
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &none      &none      &none     &none       &none      &none
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-   &out OUT_TOG  &none      &none    &none       &none       &none                                 &none      &none      &none    &none       &none      &kp ENTER  
+   &out OUT_TOG  &none     &none     &none       &none       &none                                &none      &none      &none     &none       &none      &none  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans       &none      &none    &none       &none       &none                                 &none      &none      &none    &none       &none      &kp CUP 
+    &none       &none      &none     &none       &none       &none                                 &none      &none      &none     &none       &none      &none 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans       &none      &none    &none       &none       &none       &trans        &to 0      &none      &none      &none     &none       &none      &kp CDOWN
+    &none       &none      &none     &none       &none       &none       &trans        &to 0      &none      &none       &none     &none       &none      &none
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                           &trans     &trans     &trans     &trans      &trans        &trans      &trans     &trans     &kp CLEFT &kp CRIGHT     
+                           &none     &none       &none       &none       &none          &none     &none      &none       &none     &none    
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
@@ -193,6 +210,24 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+        
+                            ARROWS {
+            bindings = <
+//╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
+    &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+    &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+    &mcbs     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
+//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
+    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &cup     &trans      &trans     &trans  
+//╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
+                           &trans     &trans     &trans     &mcspace    &trans        &trans         &trans    &cleft     &cdown     &cright     
+//                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
+            >;
+                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+ 
         };
 
         NAV {
@@ -232,22 +267,5 @@
  
         };
             
-                    ARROWS {
-            bindings = <
-//╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
-    &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
-//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
-//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &trans     &trans     &trans      &trans     &trans                                &trans     &trans     &trans     &trans      &trans     &trans  
-//├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &trans     &trans     &trans     &trans      &trans     &trans     &to 0          &trans       &trans     &trans     &cup     &trans      &trans     &trans  
-//╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                           &trans     &trans     &trans     &to 0     &trans        &trans      &to 0        &cleft     &cdown     &cright     
-//                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
-            >;
-                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
- 
-        };
     };
 };
