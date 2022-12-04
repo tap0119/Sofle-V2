@@ -71,10 +71,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&to 0 &kp BACKSPAC>E>;
-           };
-           
-           
+                = <&to 0 &kp BACKSPACE>;
+           };       
     };  
     behaviors { 
         cup: cup {
