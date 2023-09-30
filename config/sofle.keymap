@@ -171,7 +171,7 @@
                         &kp LGUI  &kp LALT   &kp SPACE &kp SPACE &hm2 LCTRL ENTER   &mk MOUSE ENTER &mk NAV BSPC &cleft  &mcdown &cright 
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
          >;           
-                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+                             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         NAV2 {
@@ -224,7 +224,7 @@
                            &trans     &trans     &trans     &mcspace    &trans        &trans         &trans    &cleft     &cdown     &cright     
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
-                             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+                             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
  
         };
 
