@@ -179,11 +179,11 @@
 //╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮                         ╭──────────┬──────────┬──────────┬──────────┬──────────┬───────────╮
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &none      &none      &none     &none       &none      &none
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-   &bt BT_NXT  &none     &none     &none       &none       &none                                &none      &none      &none     &none       &none      &none  
+   &bt BT_NXT  &none      &none     &none       &none       &none                                &none      &none      &none     &none       &none      &none  
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &none       &none      &none     &none       &none       &none                                 &none      &none      &none     &none       &none      &none 
+    &out OUT_TOG &none    &none     &none       &none       &none                                 &none      &none      &none     &none       &none      &none 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-&out OUT_TOG &none    &none       &none       &none       &trans        &to 0      &to 0     &none       &none     &none       &none      &none     &none
+     &none      &none    &none       &none       &none       &none       &none              &to 0     &none       &none     &none       &none      &none     &none
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
                            &none     &none       &none       &none       &none          &none     &none      &none       &none     &none    
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
@@ -237,9 +237,9 @@
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤                         ├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
     &kp BSPC   &kp LEFT   &kp LEFT   &kp DOWN  &kp RIGHT &kp DEL                          &kp MINUS   &hm LSHIFT N4     &kp N5     &kp N6    &kp N0       &trans 
 //├──────────┼──────────┼──────────┼──────────┼──────────┼───────────┼───────────╮  ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼───────────┤ 
-    &kp COLON  &kp LSHIFT &none      &kp EQUAL  &kp BSLH   &kp LBKT    &to MOUSE      &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &trans 
+    &kp COLON  &kp LSHIFT &none      &kp EQUAL  &kp BSLH   &kp LBKT    &trans      &to 0      &kp RBKT    &kp N1     &kp N2     &kp N3    &kp EXCL     &trans 
 //╰──────────┴──────────┼──────────┼──────────┼──────────┼───────────┼───────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┴───────────╯
-                          &none      &kp JOURNAL &none      &trans    &hm2 LSHIFT ENTER  &trans    &trans       &none      &cleft     &cright
+                          &none    &kp JOURNAL   &none      &tran &hm2 LSHIFT ENTER  &to MOUSE     &trans       &none      &none     &none
 //                      ╰──────────┴──────────┴──────────┴───────────┴───────────╯  ╰──────────┴──────────┴──────────┴───────────┴─────────╯
             >;
 
